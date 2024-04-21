@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt     
+import random as rnd
+
+x = [0]     
+y = [0]     
+
+for i in range(1, 100000):
+    random_number = rnd.random()
+    
+    if random_number < 0.787473:         
+        x.append(0.824074 * x[i - 1] + 0.281428 * y[i-1] - 1.882290 )
+        y.append(-0.212346 * x[i - 1] + 0.864198*y[i-1] - 0.110607)
+    
+    else:
+        x.append(0.088272 * x[i - 1] + 0.520988 * y[i - 1] + 0.785360)
+        y.append(-0.463889 * x[i - 1] - 0.377778 * y[i - 1] + 8.095795)
+
+plt.plot(x, y, ".", markersize=0.5)     
+plt.show()
